@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Задание</title>
+<style>
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#0b0b0b;color:#fff;display:flex;align-items:center;justify-content:center}
+  .panel{width:min(820px,92%);background:rgba(255,255,255,0.06);padding:28px;border-radius:12px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+  h1{font-size:20px;margin:0 0 12px}
+  p{margin:0 0 20px;line-height:1.5;color:#ddd}
+  .btn{display:inline-block;background:#22c55e;color:#04200f;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700}
+  .note{font-size:13px;color:#9aa0a6;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="panel" role="main">
+    <h1>Твое задание</h1>
+    <p>Сфотографируй самое странное, что ты видел за день, и отправь это создателям квеста.</p>
+
+    <!-- mailto: -->
+    <a id="mailBtn" class="btn" href="#" title="Откроет почтовый клиент и подготовит письмо">Отправить фото</a>
+
+    <div class="note">Почтовый клиент откроется автоматически. Не забудь вручную прикрепить фото к письму перед отправкой.</div>
+  </div>
+
+<script>
+  // email + subject + body (URL-encoded)
+  const email = 'primordial.00.00.000@gmail.com';
+  const subject = encodeURIComponent('Подтверждение вашей вселенной');
+  const body = encodeURIComponent('Здравствуйте,\n\nВо вложении фото для квеста (пожалуйста, прикрепите файл к этому письму):\n\n1) Коротко опишите, где было сделано фото:\n\n\n\n---\n(Отправьте это письмо и дождитесь ответа от организатора.)\n');
+
+  const mailBtn = document.getElementById('mailBtn');
+  mailBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    // открываем почтовый клиент
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    // перенаправляем на страницу ожидания через короткую задержку
+    setTimeout(() => { window.location.href = 'page3.html'; }, 500);
+  });
+</script>
+</body>
+</html>
