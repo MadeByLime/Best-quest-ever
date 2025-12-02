@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ожидание</title>
+<style>
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:Inter,system-ui,Arial,sans-serif;
+    background:#0f1724;
+    color:#e6eef8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card{
+    max-width:760px;
+    width:94%;
+    background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));
+    padding:36px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(2,6,23,0.7);
+  }
+  h1{
+    margin:0 0 12px;
+    font-size:22px;
+  }
+  p{
+    margin:0 0 20px;
+    color:#c5d5ee;
+    line-height:1.5;
+  }
+  .btn{
+    display:inline-block;
+    background:#0ea5e9;
+    color:#022a3a;
+    padding:10px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .note{
+    font-size:13px;
+    color:#9fb2d8;
+    margin-top:12px;
+  }
+</style>
+</head>
+<body>
+  <div class="card" role="main">
+    <h1>Иди бахни пивка</h1>
+    <p>Иди бахни пивка, пока мы определяем твою вселенную… Скоро мы выйдем на связь.</p>
+
+    <a class="btn" id="checkBtn" href="#">Узнать код вашей вселенной</a>
+
+    <div class="note">
+      Когда организатор проверит фото — он пришлёт письмо с ссылкой.  
+      Нажми на неё, чтобы перейти к результату.
+    </div>
+  </div>
+
+<script>
+  document.getElementById('checkBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    // Симулируем ссылку, которую ты отправишь позже
+    window.location.href = 'page4.html';
+  });
+</script>
+</body>
+</html>
