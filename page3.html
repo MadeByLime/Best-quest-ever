@@ -33,16 +33,6 @@
     color:#c5d5ee;
     line-height:1.5;
   }
-  .btn{
-    display:inline-block;
-    background:#0ea5e9;
-    color:#022a3a;
-    padding:10px 18px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:700;
-    cursor:pointer;
-  }
   .note{
     font-size:13px;
     color:#9fb2d8;
@@ -51,24 +41,13 @@
 </style>
 </head>
 <body>
-  <div class="card" role="main">
+  <div class="card" role="main" aria-live="polite">
     <h1>Иди бахни пивка</h1>
     <p>Иди бахни пивка, пока мы определяем твою вселенную… Скоро мы выйдем на связь.</p>
 
-    <a class="btn" id="checkBtn" href="#">Узнать код вашей вселенной</a>
-
     <div class="note">
-      Когда организатор проверит фото — он пришлёт письмо с ссылкой.  
-      Нажми на неё, чтобы перейти к результату.
+      Ты получишь письмо с ссылкой, по которой можно будет продолжить квест.
     </div>
   </div>
-
-<script>
-  document.getElementById('checkBtn').addEventListener('click', function(e){
-    e.preventDefault();
-    // Симулируем ссылку, которую ты отправишь позже
-    window.location.href = 'page4.html';
-  });
-</script>
 </body>
 </html>
