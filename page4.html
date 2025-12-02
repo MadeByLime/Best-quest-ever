@@ -36,6 +36,7 @@
     white-space:pre-wrap;
     display:inline-block;
     text-align:left;
+    font-family:monospace;
     font-size:15px;
   }
   .buttons{
@@ -58,8 +59,46 @@
     color:#fff;
   }
   .btn-secondary{
-    background:#f59e0b;
-    color:#0b0b0b;
+    background:#facc15;
+    color:#2d2d2d;
   }
   .msg{
-    margin-top:
+    margin-top:18px;
+    color:#cfe8d8;
+    font-size:15px;
+    min-height:30px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <h1>Ваша вселенная успешно определена.</h1>
+    <p>Ваша вселенная:</p>
+
+    <pre>… . -.- ... ..- .- .-.. -..- -. -.-- .--- / .- -. -.. .-. . .---</pre>
+
+    <div class="buttons">
+      <button id="saveBtn" class="btn btn-primary">Спасти Мир</button>
+      <button id="drinkBtn" class="btn btn-secondary">Бахнуть 0.5 хмельного</button>
+    </div>
+
+    <div id="result" class="msg" aria-live="polite"></div>
+  </div>
+
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+  const drinkBtn = document.getElementById('drinkBtn');
+  const result = document.getElementById('result');
+
+  saveBtn.addEventListener('click', () => {
+    result.textContent = 'Ура! Вы спасли Мир. Ожидайте приз на ближайшем отделении межвселенской почты!';
+  });
+
+  drinkBtn.addEventListener('click', () => {
+    result.textContent = 'Осуждаем, но понимаем. Теперь всё в руках межвселенских судей. Ожидайте хмельное и верьте в лучшее.';
+  });
+</script>
+
+</body>
+</html>
+
