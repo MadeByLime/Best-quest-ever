@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Результат</title>
+
 <style>
   html,body{
     height:100%;
@@ -15,6 +16,7 @@
     align-items:center;
     justify-content:center;
   }
+
   .wrap{
     max-width:880px;
     width:94%;
@@ -24,24 +26,83 @@
     background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
     box-shadow:0 12px 36px rgba(0,0,0,0.6);
   }
+
   h1{
     margin:0 0 12px;
     font-size:22px;
   }
+
   pre{
     background:rgba(0,0,0,0.35);
     padding:18px;
     border-radius:10px;
-    color:#dbeafe;
+    color:#bdeafe;
     white-space:pre-wrap;
     display:inline-block;
     text-align:left;
     font-family:monospace;
     font-size:15px;
   }
+
   .buttons{
     margin-top:20px;
     display:flex;
     gap:12px;
     justify-content:center;
-    flex-wr
+    flex-wrap:wrap;
+  }
+
+  button{
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:opacity .2s;
+  }
+
+  #saveBtn{
+    background:#31a8ff;
+    color:white;
+  }
+
+  #drinkBtn{
+    background:#444bff;
+    color:white;
+  }
+
+  button:hover{
+    opacity:0.8;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="wrap" role="main">
+    <h1>Ваша вселенная успешно определена.</h1>
+    <p>Ваша вселенная:</p>
+
+    <pre>… . -.- ... ..- .- .-.. -..- -. -.-- .--- / .- -. -.. .-. . .---</pre>
+
+    <div class="buttons">
+      <button id="saveBtn">Спасти Мир</button>
+      <button id="drinkBtn">Бахнуть 0.5 хмельного</button>
+    </div>
+  </div>
+
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+  const drinkBtn = document.getElementById('drinkBtn');
+
+  saveBtn.addEventListener('click', () => {
+    window.location.href = 'win.html';
+  });
+
+  drinkBtn.addEventListener('click', () => {
+    window.location.href = 'drink.html';
+  });
+</script>
+
+</body>
+</html>
