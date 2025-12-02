@@ -1,104 +1,12 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Результат</title>
-<style>
-  html,body{
-    height:100%;
-    margin:0;
-    font-family:Inter,system-ui,Arial,sans-serif;
-    background:#081226;
-    color:#e6eef8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .wrap{
-    max-width:880px;
-    width:94%;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
-    box-shadow:0 12px 36px rgba(0,0,0,0.6);
-  }
-  h1{
-    margin:0 0 12px;
-    font-size:22px;
-  }
-  pre{
-    background:rgba(0,0,0,0.35);
-    padding:18px;
-    border-radius:10px;
-    color:#dbeafe;
-    white-space:pre-wrap;
-    display:inline-block;
-    text-align:left;
-    font-family:monospace;
-    font-size:15px;
-  }
-  .buttons{
-    margin-top:20px;
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  .btn{
-    padding:12px 18px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:700;
-    cursor:pointer;
-    border:none;
-  }
-  .btn-primary{
-    background:#16a34a;
-    color:#fff;
-  }
-  .btn-secondary{
-    background:#facc15;
-    color:#2d2d2d;
-  }
-  .msg{
-    margin-top:18px;
-    color:#cfe8d8;
-    font-size:15px;
-    min-height:30px;
-  }
-</style>
-</head>
-<body>
-  <div class="wrap" role="main">
-    <h1>Ваша вселенная успешно определена.</h1>
-    <p>Ваша вселенная:</p>
-
-    <pre>… . -.- ... ..- .- .-.. -..- -. -.-- .--- / .- -. -.. .-. . .---</pre>
-
-    <div class="buttons">
-      <button id="saveBtn" class="btn btn-primary">Спасти Мир</button>
-      <button id="drinkBtn" class="btn btn-secondary">Бахнуть 0.5 хмельного</button>
-    </div>
-
-    <div id="result" class="msg" aria-live="polite"></div>
-  </div>
-
 <script>
   const saveBtn = document.getElementById('saveBtn');
   const drinkBtn = document.getElementById('drinkBtn');
-  const result = document.getElementById('result');
 
   saveBtn.addEventListener('click', () => {
-    result.textContent = 'Ура! Вы спасли Мир. Ожидайте приз на ближайшем отделении межвселенской почты!';
+    window.location.href = 'win.html';
   });
 
   drinkBtn.addEventListener('click', () => {
-    result.textContent = 'Осуждаем, но понимаем. Теперь всё в руках межвселенских судей. Ожидайте хмельное и верьте в лучшее.';
+    window.location.href = 'drink.html';
   });
 </script>
-
-</body>
-</html>
-
