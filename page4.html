@@ -61,12 +61,12 @@
     transition:opacity .2s;
   }
 
-  #saveBtn{
+  .btn-primary{
     background:#31a8ff;
     color:white;
   }
 
-  #drinkBtn{
+  .btn-secondary{
     background:#444bff;
     color:white;
   }
@@ -86,22 +86,34 @@
     <pre>… . -.- ... ..- .- .-.. -..- -. -.-- .--- / .- -. -.. .-. . .---</pre>
 
     <div class="buttons">
-      <button id="saveBtn">Спасти Мир</button>
-      <button id="drinkBtn">Бахнуть 0.5 хмельного</button>
+
+      <!-- КНОПКА "СПАСТИ МИР" -->
+      <form action="https://formspree.io/f/xpwvrkor" method="POST" onsubmit="goToWin()">
+        <input type="hidden" name="choice" value="Save the Universe">
+        <button type="submit" class="btn-primary">Спасти Мир</button>
+      </form>
+
+      <!-- КНОПКА "БАХНУТЬ 0.5" -->
+      <form action="https://formspree.io/f/xpwvrkor" method="POST" onsubmit="goToDrink()">
+        <input type="hidden" name="choice" value="Drink 0.5 Beer">
+        <button type="submit" class="btn-secondary">Бахнуть 0.5 хмельного</button>
+      </form>
+
     </div>
   </div>
 
 <script>
-  const saveBtn = document.getElementById('saveBtn');
-  const drinkBtn = document.getElementById('drinkBtn');
+  function goToWin() {
+    setTimeout(() => {
+      window.location.href = "win.html";
+    }, 50);
+  }
 
-  saveBtn.addEventListener('click', () => {
-    window.location.href = 'win.html';
-  });
-
-  drinkBtn.addEventListener('click', () => {
-    window.location.href = 'drink.html';
-  });
+  function goToDrink() {
+    setTimeout(() => {
+      window.location.href = "drink.html";
+    }, 50);
+  }
 </script>
 
 </body>
