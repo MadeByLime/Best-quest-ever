@@ -74,6 +74,12 @@
   button:hover{
     opacity:0.8;
   }
+
+  /* Скрываем поля, но Formspree их принимает */
+  .hidden-field {
+    position:absolute;
+    left:-9999px;
+  }
 </style>
 </head>
 
@@ -89,20 +95,20 @@
 
     <!-- КНОПКА "СПАСТИ МИР" -->
     <form action="https://formspree.io/f/xpvwrkor" method="POST" onsubmit="goToWin()">
-      <input type="hidden" name="choice" value="Save the Universe">
       
-      <!-- обязательное скрытое поле email -->
-      <input type="email" name="email" value="quest-system@multiverse.com" style="display:none">
+      <input class="hidden-field" type="text" name="user" value="Andrey">
+      <input class="hidden-field" type="email" name="email" value="quest-system@multiverse.com">
+      <input type="hidden" name="choice" value="Save the Universe">
 
       <button type="submit" class="btn-primary">Спасти Мир</button>
     </form>
 
     <!-- КНОПКА "БАХНУТЬ 0.5" -->
     <form action="https://formspree.io/f/xvgerdlr" method="POST" onsubmit="goToDrink()">
-      <input type="hidden" name="choice" value="Drink 0.5 Beer">
 
-      <!-- обязательное скрытое поле email -->
-      <input type="email" name="email" value="quest-system@multiverse.com" style="display:none">
+      <input class="hidden-field" type="text" name="user" value="Andrey">
+      <input class="hidden-field" type="email" name="email" value="quest-system@multiverse.com">
+      <input type="hidden" name="choice" value="Drink 0.5 Beer">
 
       <button type="submit" class="btn-secondary">Бахнуть 0.5 хмельного</button>
     </form>
@@ -114,13 +120,13 @@
   function goToWin() {
     setTimeout(() => {
       window.location.href = "win.html";
-    }, 50);
+    }, 120);
   }
 
   function goToDrink() {
     setTimeout(() => {
       window.location.href = "drink.html";
-    }, 50);
+    }, 120);
   }
 </script>
 
