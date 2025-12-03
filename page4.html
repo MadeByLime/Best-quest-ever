@@ -1,133 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Результат</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Результат</title>
 
 <style>
-  html,body{
-    height:100%;
-    margin:0;
-    font-family:Inter,system-ui,Arial,sans-serif;
-    background:#081226;
-    color:#e6eef8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .wrap{
-    max-width:880px;
-    width:94%;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
-    box-shadow:0 12px 36px rgba(0,0,0,0.6);
-  }
-
-  h1{
-    margin:0 0 12px;
-    font-size:22px;
-  }
-
-  pre{
-    background:rgba(0,0,0,0.35);
-    padding:18px;
-    border-radius:10px;
-    color:#bdeafe;
-    white-space:pre-wrap;
-    display:inline-block;
-    text-align:left;
-    font-family:monospace;
-    font-size:15px;
-  }
-
-  .buttons{
-    margin-top:20px;
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  button{
-    padding:12px 22px;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
-    transition:opacity .25s;
-  }
-
-  .btn-primary{
-    background:#31a8ff;
-    color:white;
-  }
-
-  .btn-secondary{
-    background:#444bff;
-    color:white;
-  }
-
-  button:hover{
-    opacity:0.8;
-  }
-
-  /* Скрываем поля, но Formspree их принимает */
-  .hidden-field {
-    position:absolute;
-    left:-9999px;
-  }
+    html,body{
+        height:100%;
+        margin:0;
+        font-family:Inter,system-ui,Arial,sans-serif;
+        background:#081226;
+        color:#e6eef8;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    .wrap{
+        max-width:880px;
+        width:94%;
+        padding:30px;
+        border-radius:12px;
+        text-align:center;
+        background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+        box-shadow:0 12px 36px rgba(0,0,0,0.6);
+    }
+    h1{
+        margin:0 0 12px;
+        font-size:22px;
+    }
+    pre{
+        background:rgba(0,0,0,0.35);
+        padding:18px;
+        border-radius:10px;
+        color:#bdeafe;
+        white-space:pre-wrap;
+        display:inline-block;
+        text-align:left;
+        font-family:monospace;
+        font-size:15px;
+    }
+    .buttons{
+        margin-top:20px;
+        display:flex;
+        gap:12px;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+    button{
+        padding:12px 22px;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;
+        transition:opacity .2s;
+    }
+    .btn-primary{
+        background:#31a8ff;
+        color:white;
+    }
+    .btn-secondary{
+        background:#444bff;
+        color:white;
+    }
+    button:hover{
+        opacity:0.8;
+    }
 </style>
 </head>
 
 <body>
 
 <div class="wrap" role="main">
-  <h1>Ваша вселенная успешно определена.</h1>
-  <p>Ваша вселенная:</p>
+    <h1>Ваша вселенная успешно определена.</h1>
+    <p>Ваша вселенная:</p>
 
-  <pre>... . -.- ... ..- .- .-.. -..- -. -.-- .--- / .- -. -.. .-. . .---</pre>
+    <pre> . -  --  ...  -.. -- -.-. --- ... -- ..-- / .-- -- -- . -.. . ..</pre>
 
-  <div class="buttons">
+    <div class="buttons">
 
-    <!-- КНОПКА "СПАСТИ МИР" -->
-    <form action="https://formspree.io/f/xpvwrkor" method="POST" onsubmit="goToWin()">
-      
-      <input class="hidden-field" type="text" name="user" value="Andrey">
-      <input class="hidden-field" type="email" name="email" value="quest-system@multiverse.com">
-      <input type="hidden" name="choice" value="Save the Universe">
+        <!-- КНОПКА "СПАСТИ МИР" — НОВЫЙ ENDPOINT -->
+        <form action="https://formspree.io/f/xjknrjzj" method="POST" onsubmit="goToWin()">
+            <input type="hidden" name="choice" value="Save the Universe">
+            <button type="submit" class="btn-primary">Спасти Мир</button>
+        </form>
 
-      <button type="submit" class="btn-primary">Спасти Мир</button>
-    </form>
+        <!-- КНОПКА "БАХНУТЬ 0.5" — РАБОЧИЙ ENDPOINT -->
+        <form action="https://formspree.io/f/xvgerdlr" method="POST" onsubmit="goToDrink()">
+            <input type="hidden" name="choice" value="Drink 0.5 Beer">
+            <button type="submit" class="btn-secondary">Бахнуть 0.5 хмельного</button>
+        </form>
 
-    <!-- КНОПКА "БАХНУТЬ 0.5" -->
-    <form action="https://formspree.io/f/xvgerdlr" method="POST" onsubmit="goToDrink()">
-
-      <input class="hidden-field" type="text" name="user" value="Andrey">
-      <input class="hidden-field" type="email" name="email" value="quest-system@multiverse.com">
-      <input type="hidden" name="choice" value="Drink 0.5 Beer">
-
-      <button type="submit" class="btn-secondary">Бахнуть 0.5 хмельного</button>
-    </form>
-
-  </div>
+    </div>
 </div>
 
 <script>
-  function goToWin() {
+function goToWin() {
     setTimeout(() => {
-      window.location.href = "win.html";
-    }, 120);
-  }
+        window.location.href = "win.html";
+    }, 50);
+}
 
-  function goToDrink() {
+function goToDrink() {
     setTimeout(() => {
-      window.location.href = "drink.html";
-    }, 120);
-  }
+        window.location.href = "drink.html";
+    }, 50);
+}
 </script>
 
 </body>
